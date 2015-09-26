@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Application</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="Description" content="Author: Buddika widu Ranaweera">
+    <meta name="keywords" content="Using Bootstrap 3.3.5 ,FontAwesome 4.2 with ASP.NET MVC 4 Sample Application for beginners">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    @*------------Navigation Fixed to top----------------------*@
+
+    <style>
+        body {
+            background: #8999A8;
+        }
+
+        .navbar, .dropdown-menu {
+            background: rgba(255,255,255,0.25);
+            border: none;
+        }
+
+            .nav > li > a, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li > a, .dropdown-menu > li {
+                border-bottom: 3px solid transparent;
+            }
+
+                .nav > li > a:focus, .nav > li > a:hover, .nav .open > a, .nav .open > a:focus, .nav .open > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+                    border-bottom: 3px solid transparent;
+                    background: none;
+                }
+
+                .navbar a, .dropdown-menu > li > a, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+                    color: #fff;
+                }
+
+        .dropdown-menu {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1) {
+            border-bottom: #C4E17F 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2) {
+            border-bottom: #F7FDCA 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3) {
+            border-bottom: #FECF71 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4) {
+            border-bottom: #F0776C 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5) {
+            border-bottom: #DB9DBE 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6) {
+            border-bottom: #C49CDE 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7) {
+            border-bottom: #669AE1 3px solid;
+        }
+
+        .nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8) {
+            border-bottom: #62C2E4 3px solid;
+        }
+    </style>
+    <div class="navbar-wrapper">
+        <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                      
+                        <a class="navbar-brand" href="#">Милый дом</a>
+
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                       
+                            <li class="active"><a href="#" class="">Гостиные</a></li>
+                            <li class=""><a href="#">Детские</a></li>
+                            <li class=""><a href="#">Спальни и кровати</a></li>
+                            <li class=""><a href="#">Мягкая мебель</a></li>
+                            <li class=""><a href="#">Кухни</a></li>
+
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li class=""><a href="#">Корзина</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    @*-----------/Navigation Fixed to top----------------------*@
+
+    <div id="body">
+
+        <div  class="container theme-showcase" role="main" >
+            <section class="content-wrapper main-content clear-fix">
+
+                <br>
+                <br>
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+
+            <div class="container theme-showcase">
+
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>
