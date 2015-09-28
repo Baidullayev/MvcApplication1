@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MvcApplication1.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>Index</h2>
+<h3>@Model.Count() - товаров в корзине</h3>
+@foreach(var item in Model)
+{
+            <label> @item.Name   </label>       <label><a href="@Url.Action("DeleteFromCart", "Cart", new { id = item.Id, r = Request.Url.ToString()})" class="btn btn-primary">удалить<span class="glyphicon glyphicon-chevron-right"></span></a> </label>
+        
+
+    <br />
+}

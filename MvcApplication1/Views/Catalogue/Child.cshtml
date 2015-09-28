@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MvcApplication1.Models.Product>
+@{
+    ViewBag.Title = "Child";
+}
+
+<h2>Детские</h2>
+@foreach (var item in Model)
+{
+    <hr>
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>@item.Name</h3>
+            <h4>@item.Prise</h4>
+            <p>@item.Description</p>
+            <a href="@Url.Action("AddToCart", "Cart", new { id = item.Id, r = Request.Url.ToString()})" class="btn btn-default">в корзину<span class="glyphicon glyphicon-shopping-cart"></span></a>
+            <a href="@Url.Action("Index", "Role", new { id = item.Id })" class="btn btn-primary">Подробно<span class="glyphicon glyphicon-chevron-right"></span></a>
+            @*@Html.ActionLink("в корзину", "toBusket", "Basket", new { id = item.Id }, new { @class = "btn btn-primary" })*@
+            @*<a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-shopping-cart"></span></a>*@
+        </div>
+    </div>
+
+    @*<label><h3> @item.Name </h3>  </label>       <label> @Html.ActionLink("в корзину", "toBusket", new { id = item.Id }, null) </label>
+        <br />*@
+
+}

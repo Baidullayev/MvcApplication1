@@ -1,17 +1,19 @@
-﻿using System;
+﻿using MvcApplication1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using NHibernate;
 namespace MvcApplication1.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
+            ISessionFactory session = NHibernateHelper.CreateSessionFactory();
             return View();
         }
 
